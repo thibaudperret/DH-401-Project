@@ -72,7 +72,7 @@ The questionnaire will be set in place for next milestone, and we intend to have
 
 # References
 
-[1] Choix musicaux, modes de découverte et contextes d’écoute. Une typologie des univers musicaux des 15-25 ans, M. Azam,  M. Grossetti, L. Laffont et B. Tudoux, Sociologie, 2018, N° 4, Volume 9, PP 343 - 360
+[1] _Choix musicaux, modes de découverte et contextes d’écoute. Une typologie des univers musicaux des 15-25 ans_, M. Azam,  M. Grossetti, L. Laffont et B. Tudoux, Sociologie, 2018, N° 4, Volume 9, PP 343 - 360
 https://www.cairn.info/revue-sociologie-2018-4-page-343.htm?contenu=resume
 
 [2] Spotify API https://developer.spotify.com/documentation/web-api/
@@ -84,7 +84,7 @@ https://www.cairn.info/revue-sociologie-2018-4-page-343.htm?contenu=resume
 [5] Computing significance from correlation
 https://www.texasgateway.org/resource/124-testing-significance-correlation-coefficient-optional
 
-[6] Class Position and Musical Tastes: A Sing‐Off between the Cultural Omnivorism and Bourdieusian Homology Frameworks, G. Veenstra, DOI https://doi.org/10.1111/cars.12068
+[6] _Class Position and Musical Tastes: A Sing‐Off between the Cultural Omnivorism and Bourdieusian Homology Frameworks_, G. Veenstra, DOI https://doi.org/10.1111/cars.12068
 
 [7] Mailing list specification 
 https://help-mail.epfl.ch/en/mailing-lists/#faq-1f37dccdbcb7efae9d6871d745e4c155
@@ -94,5 +94,6 @@ https://cadiwww.epfl.ch/listes/viewlist?unite=epfl&categorie=etudiants/etudiants
 [8] Calculate the ideal sample size with the support from:
 https://www.surveymonkey.com/mp/sample-size-calculator/
 
-Traduction for [1]: Musical tastes, discovering modes and listening contexts. A topology of the musical universes of 15-25 year olds
+Traduction for [1]: _Musical tastes, discovering modes and listening contexts. A topology of the musical universes of 15-25 year olds_
+
 For references [1] and [6], the articles are in French, but the abstracts are available in English as well, so you can get the idea behind the study.
