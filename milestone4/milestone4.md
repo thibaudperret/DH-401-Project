@@ -1,12 +1,12 @@
-### Preparation for next milestone
+# Preparation for next milestone
 
 We had to set up an Overleaf document in order to prepare for next milestone, and here is the (read-only) link: https://www.overleaf.com/read/qbsypjcwwrcp
 
-### Recap of last milestone
+# Recap of last milestone
 
 As a recap, milestone 3 was about setting up the survey and deploying it, as well as preparing the tools we would use to do analysis on the data. In the survey we had a list of genre, and we asked people to give a score to each one of them, from 0 to 10, according to how often they listen to this kind of music. The proportion is what interested us at first, but an absolute reference would have also been welcome, so we added a question asking to how many hours of music the people listen to per week. That way, the idea would be to combine the absolute value with the proportion of each genre to have a rough estimate of how many hours per week people listen to the different genres.
 
-### Precision of Research Question
+# Precision of Research Question
 
 After minestrone 3 and after having been able to observe the first results of our survey we stopped to look at the exact questions of our research. 
 
@@ -33,12 +33,11 @@ Another reason is that students took different strategies to evaluate their genr
 
 The third reason is that the use of a cursor could have provided a more spontaneous and thus more accurate result.
 
-
-### Gathered data
+# Gathered data
 
 The survey was put online on April 17th and quickly got around 20 responses. The survey is open until now, and we now have a total of 62 answers. Taking a look at the data, we quickly realised that there were some problematic answers. For example, one of the response put 99 as the age, every genre to 10, and a weekly total of 100 hours. Another answer clearly was in this same case. This kind of data seems to be misleading and it is uncertain that it means anything so it was removed from the results. Another answer did not check the “I agree that my data is used for university research” so it was also removed in order to respect the wish (although it is questionable that somebody took the time to answer what clearly was purposed for research, only to not agree on sharing their answers). Thus the total number of data points reached 59. 
 
-### Cleaning data
+# Cleaning data
 
 When exporting Google form answers to an Excel format, there is one column per question. The way our survey was designed is that it first asked for the university to which the subject belongs, and then asking their degree and section. As the list of section is rather long, the form was split after the question about the university, and according to the answer, we get a different page, with specified sections (for example, if somebody checked that they study at EPFL, then the section options only lists EPFL sections). This meant that the Excel answer file has several time the same question (like the question about section), and for people at EPFL, one column is always empty, and for people at UNIL, the other column is always empty. 
 
@@ -75,7 +74,7 @@ Major         category
 
 The code for the cleaning part can be found in cleaner.ipynb.
 
-### Presenting the data
+# Presenting the data
 
 Here we show the number of answers for each school:
 
@@ -117,3 +116,38 @@ Here is a simple analysis of the data (using Pandas function describe on the dat
 We can see that the most listened genre is Pop with a mean of 5.37 on the 0-10 scale, the least listened one being Folk with a mean of 1.77. Hip-hop can be seen as the most controversial genre out of the ones here, because its standard deviation is the highest, meaning there is a higher change between different people, roughly speaking, – people either love it or hate it.
 
 A deeper analysis of the results will now be presented.
+
+# Analysis and results
+
+## 1. EPFL vs. UNIL
+
+As a first deeper analysis, it was interesting to compare the result of people from EPFL to people from UNIL. The first very vague idea is to compute the mean of preferences of each group. Here are the values:
+
+```
+| University | Classical | Rock | Pop  | R&B/Soul | Electronic | Folk | Jazz | Blues | Hiphop |
+|------------|-----------|------|------|----------|------------|------|------|-------|--------|
+| EPFL       | 4.06      | 3.32 | 4.77 | 3.19     | 3.22       | 2.12 | 3.22 | 2.70  | 3.45   |
+| UNIL       | 3.62      | 3.68 | 5.89 | 4.44     | 4.48       | 1.34 | 1.82 | 1.68  | 5.10   |
+```
+
+The need of comparing those two vectors is what motivates the next part. We can draw naive conclusion from this data, namely, we see that people from UNIL tend to listen to more Hip-hop than people from EPFL. This result cannot be classified as more than an interpretation, and it would desirable to have a value that states how close or far the values are. We could compute a simple correlation term or a cosine similarity in order to have a metric regarding how alike the preferences are. This is better than before but still, having only one value does not allow us to conclude anything.
+
+Technically, we would like to have an hypothesis that we could confirm or reject depending on our data. The 2-sample bootstrap method is what we need here. As a quick heads up, this method allow us to have a statistical reference when comparing two distributions, meaning its result may indicate that 2 samples from 2 population are different, statistically speaking. A more detailed explanation of the method can be found in  the previous milestone or in [1]. 
+
+We start with a null-hypothesis being "People from EPFL and people from UNIL have the same musical preferences". The bootstrap method get used (using cosine similarity as metric), and here is the resulting plot:
+
+![](bootstrap-epfl-unil-cos-sim.png)
+
+The blue line here is the original similarity of the EPFL vector and the UNIL vector. Then we proceed with 100000 samples, and get a distribution of similarities, that are represented in the plot by the orange distribution. The orange plain line is the mean of the samples' similarities, and the dashed orange lines are the 5 percentile and 95 percentile of the same data. The bootstrap method indicates us that if the original similarity score lies outside of the confidence interval between the two dashed lines, then we can reject the null-hypothesis. Here, it is the case, so rejecting the hypothesis means that we can conclude that people from EPFL and people from UNIL statistically have different listening habits.
+
+We can redo exactly this using another metric, namely the absolute difference metric. It is defined as such:
+
+![](equation.png)
+
+Note that this metric gives a value of 0 if two vectors are the same (in contrast with the cosine similarity which gives 1). If we apply the bootstrap method once again, we get this result, which confirms the conclusion just above:
+
+![](bootstrap-epfl-unil-abs-diff.png)
+
+# References
+
+[1] _Two-sample bootstrap tests: When to mix?_ Subhash Lele, Ed Carlstein
