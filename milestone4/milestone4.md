@@ -198,14 +198,50 @@ We compare the preferences between the macrogroups by applying the same cosine d
 
 As we can see, the difference between the two major macrogroups is by far not as significant the difference between the two universities, meaning that the campus environment could be more decisive for the tastes. However, there are still notable differences if we look into finer distinction between the study groups.
 
+### Differences
+
+| **STI** | **EPFL** |
+|:--------:|:--------:|
+| ![](bootstrap-cos-sim-sti) | ![](bootstrap-cos-sim-econ)
+
+Most sections have not shown significant deviation from others with two notable exceptions: engineering students from STI and to a lesser degree students of economics.
+
+
+| **ENAC** | **Informatics** |
+|:--------:|:--------:|
+|![](bootstrap-cos-sim-enac) | ![](bootstrap-cos-sim-ic)
+| **Arts** | **Sciences** |
+![](bootstrap-cos-sim-lettres) | ![](bootstrap-cos-sim-science)
+| **Social studies** | |
+|![](bootstrap-cos-sim-socpoli)|
+
+### Favorite genres
+
+We found the favorite/most popular genres in each field of study found taking the maximum average ratings. Below is the table with three highest rated genres per section:
+
+|Rank  | **Informatics** | | **Sciences** | | **ENAC** | | **STI** | | **Economics** | | **Social studies** | | **Arts** | |
+|:----:|:----:|:----|:----:|:----|:----:|:----|:----:|:----|:----:|:----|:----:|:----|:----:|:----|
+| | genre | mean | genre | mean | genre | mean | genre | mean | genre | mean | genre | mean | genre | mean |
+|1|	Pop	 | 5.250 | Pop	| 5.4	| Pop	| 5.375	|Classical|	3.667	|Pop	|5.125	|Pop	|6.909	|Hiphop	|7.833 |
+|2|	R&B/Soul |4.375 |Rock	| 4.7	| Classical	|5.125	|Pop	|2.667	|Classical	|4.125	|Hiphop	|5.273	| Pop | 6.500 |
+|3|	Hiphop	| 4.125	|Electronic	|4.4	|Electronic	|5.125	|Jazz	|2.111	|R&B/Soul	|4.000	|Rock	|4.545	|R&B/Soul |	5.833 |
+
+As was expected from the previous general analysis of the data, pop music dominates across most of the sections as the most popular one. The second top choice varies.
+The outliers here are STI where students slightly prefer classical music and the Art faculty which overwhelmingly favors hiphop. The average score of a top genre is 5.651.
+
 ### Homogeneity
 
 We define *homogeneity* as the average of pairwise cosine similarities within a set ***d*** of preference vectors that correspond to a certain section:
+
 ![](homogeneity_01.png)
 ![](homogeneity_02.png)
+
+
 With this measure we can see in which fields of study the tastes are the most aligned.
 
-Interestingly, the section that is the most dissimilar to the others, which is School of Engineering (STI), turned out to also be the most heterogeneous. This is also visible in how none of the genres has a huge advantage over the others for this section with maximum "popularity" (mean) at just 3.67 for classical music. In contrast, the most uniform in its tastes compared to the rest, is Faculty of Arts ("lettres") with homogeneity coefficient of 0.81, followed by School of Architecture, Civil and Environmental Engineering (ENAC).
+Interestingly, the section that is the most different from the others, which is School of Engineering (STI), turned out to also be the most heterogeneous. This is also visible in how none of the genres has a huge advantage over the others for this section with maximum "popularity" (mean) at just 3.67 for classical music. The fact that STI is an outlier in all of the study might be partially explained by the fact that "engineering" is really an umbrella term here that includes many dissimilar fields of study: electrical engineering, live sciences engineering, mechanical engineering, material engineering etc. It is possible that STI is not a suitable study unit for our purposes. This, however, doesn't take away that it is the only section where classical music is the most prominent genre.
+
+In contrast, the most uniform in its tastes compared to the rest, is Faculty of Arts ("lettres") with homogeneity coefficient of 0.81, followed by School of Architecture, Civil and Environmental Engineering (ENAC).
 
 |#|Section|Homogeneity
 |:----:|:----:|:----:|
@@ -228,7 +264,6 @@ More noticeably, business and humanities students have relatively more homogeneo
 |**Business&Humanities**|**STEM**|
 |:---------------------:|:------:|
 |        0.710582       |0.632053|
-
 
 # References
 
