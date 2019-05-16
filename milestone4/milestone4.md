@@ -78,7 +78,6 @@ The code for the cleaning part can be found in cleaner.ipynb.
 
 Here we show the number of answers for each school:
 
-```
 | School                                                               | Number of answers |
 |----------------------------------------------------------------------|-------------------|
 | College of Humanities (CDH)                                          |         3         |
@@ -93,14 +92,14 @@ Here we show the number of answers for each school:
 | School of Basic Sciences (SB)                                        |         5         |
 | School of Computer and Communication Sciences (IC)                   |         5         |
 | School of Engineering (STI)                                          |         9         |
-```
+
 
 These number are fairly balanced, the School of Engineering is the one where we got the most results. This higher number will be used as a way to split the population between people in STI and the others.
 
 Here is a simple analysis of the data (using Pandas function describe on the data frame):
 
 
-```
+
 |       | Age   | Classical | Rock | Pop  | R&B/Soul | Electronic | Folk | Jazz | Blues | Hiphop | Total | 
 |-------|-------|-----------|------|------|----------|------------|------|------|-------|--------|-------|
 | count | 59    | 59        | 59   | 59   | 59       | 59         | 59   | 59   | 59    | 59     | 59    | 
@@ -111,7 +110,7 @@ Here is a simple analysis of the data (using Pandas function describe on the dat
 | 50%   | 23    | 4         | 3    | 5    | 4        | 3          | 1    | 1    | 1     | 3      | 10    |
 | 75%   | 25    | 6.5       | 6    | 8    | 6        | 6          | 3    | 4    | 4     | 8      | 18    |
 | max   | 31    | 10        | 10   | 10   | 10       | 10         | 9    | 10   | 10    | 10     | 80    |
-```
+
 
 We can see that the most listened genre is Pop with a mean of 5.37 on the 0-10 scale, the least listened one being Folk with a mean of 1.77. Hip-hop can be seen as the most controversial genre out of the ones here, because its standard deviation is the highest, meaning there is a higher change between different people, roughly speaking, – people either love it or hate it.
 
@@ -161,8 +160,10 @@ To find a relationship between genres, correlation between them was computed. Fr
 
 We also noticed that the correlations between folk music and hip-hop, as well as folk music and electronic, are lower than average. Hence, these two genres can be interpreted as contrasting. The preference for folk is independent of hip-hop and Electronic music.
 
-:------------------------------:|:--------------------------:
-![](correlation_btw_genres.png) |  ![](correlation_mean.png)
+
+|         Correlations            |           Mean
+| :------------------------------:|:--------------------------:
+| ![](correlation_btw_genres.png) |  ![](correlation_mean.png)
 
 Computing the means of correlations with other genres for each separate genre, demonstrates that in general, people's preference for folk music in general has little to do with their preference for other genres.
 
