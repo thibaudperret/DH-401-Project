@@ -140,7 +140,7 @@ We start with a null-hypothesis being "People from EPFL and people from UNIL hav
 
 The blue line here is the original similarity of the EPFL vector and the UNIL vector. Then we proceed with 100000 samples, and get a distribution of similarities, that are represented in the plot by the orange distribution. The orange plain line is the mean of the samples' similarities, and the dashed orange lines are the 5 percentile and 95 percentile of the same data. The bootstrap method indicates us that if the original similarity score lies outside of the confidence interval between the two dashed lines, then we can reject the null-hypothesis. Here, it is the case, so rejecting the hypothesis means that we can conclude that people from EPFL and people from UNIL statistically have different listening habits.
 
-We can redo exactly this using another metric, namely the absolute difference metric. It is defined as such:
+To verify the result, we can redo exactly this using another metric, namely the absolute difference metric. It is defined as such:
 
 ![](equation.png)
 
@@ -148,6 +148,50 @@ Note that this metric gives a value of 0 if two vectors are the same (in contras
 
 ![](bootstrap-epfl-unil-abs-diff.png)
 
+The chart below shows the means of different genres in the both universities. We can see that EPFL students have larger preferences to jazz, blues and folk music, and also prefer hip-hop music less.
+
+![](unis_preferences.png)
+
+The explanation for such situation with hip-hop could lie in the linguistic organization of two campuses. While EPFL is more international with English veing a prominent language, UNIL is clearly dominated by French language and thus culture. French rap has become a rather high-profile and very mainstream within last 2-3 years, so it is possible that predominantely French-speaking students of UNIL would listen to it more.
+
+
+## Relations between genres
+
+To find a relationship between genres, correlation between them was computed. From the obtained result, it is evident that that jazz and blues have a very strong correlation value, which indicates that people who listen to jazz with a very high probability will also enjoy blues, and the time they spend on these 2 types will be similar as well.
+
+We also noticed that the correlations between folk music and hip-hop, as well as folk music and electronic, are lower than average. Hence, these two genres can be interpreted as contrasting. The preference for folk is independent of hip-hop and Electronic music.
+
+![](correlation_btw_genres.png) ![](correlation_mean.png)
+
+Computing the means of correlations with other genres for each separate genre, demonstrates that in general, people's preference for folk music in general has little to do with their preference for other genres.
+
+
+## Differences depending the field of study
+
+Next step is the examination of musical preferences depending on the kinds of studies. For this part, it appeared reasonable to group some closely related fields across UNIL and EPFL together to get a more statistically balanced representation, considering the fact that some sections had very few data points. Sections with a larger number of responses were kept separate. Additionally, these groups were combined into 2 macrogroups - STEM and Business&Humanities, similarly to what has been done in one comparative study on musical tastes of Chinese and American students [2].
+College of Digital Humanities (CHD), being on the edge between the two, could stand separately as it is difficult to classify as belonging to one group or another. However, due to the low number of responses and considering that students mostly come from computer science and engineering background, it was grouped together with the IC department (School of Computer and Communication Sciences). The grouping is as follows:
+
+```
+|        Macrogroup       |         Group         |        Section      |  Number of students |
+|:-----------------------:|:----------------------|:--------------------|--------------------:|
+|       **STEM**          |        Sciences       | SB (EPFL)           | 10                  |
+|                         |                       | SB (EPFL)           |                     |
+|                         |   Informatics (EPFL)  | IC                  | 8                   |
+|                         |                       | CDH                 |                     |
+|                         |      ENAC (EPFL)      |                     | 8                   |
+|                         |       STI (EPFL)      |                     | 9                   |
+| **Business&Humanities** | Social Studies (Unil) | SSP                 | 11                  |
+|                         |                       | FDCA                |                     |
+|                         |                       | GSE                 |                     |
+|                         |       Economics       | CDM (EPFL)          | 8                   |
+|                         |                       | HEC (Unil)          |                     |
+|                         |       Arts (Unil)     | Faculté des lettres | 6                   |
+```
+
+We compare the prefernces between the macrogroups by applying the same cosine difference and validating through the bootstraping method as we did before to compare between the universities.
+
+
 # References
 
 [1] _Two-sample bootstrap tests: When to mix?_ Subhash Lele, Ed Carlstein
+[2] _Globalization of Millennials’ Music Consumption: A cross-national music taste study of undergraduate students in China and the U.S._ Yifan Xu
