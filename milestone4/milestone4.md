@@ -202,18 +202,18 @@ As we can see, the difference between the two major macrogroups is by far not as
 
 | **STI** | **EPFL** |
 |:--------:|:--------:|
-| ![](bootstrap-cos-sim-sti) | ![](bootstrap-cos-sim-econ)
+| ![](bootstrap-cos-sim-sti.png) | ![](bootstrap-cos-sim-econ.png)
 
 Most sections have not shown significant deviation from others with two notable exceptions: engineering students from STI and to a lesser degree students of economics.
 
 
 | **ENAC** | **Informatics** |
 |:--------:|:--------:|
-|![](bootstrap-cos-sim-enac) | ![](bootstrap-cos-sim-ic)
+|![](bootstrap-cos-sim-enac.png) | ![](bootstrap-cos-sim-ic.png)
 | **Arts** | **Sciences** |
-![](bootstrap-cos-sim-lettres) | ![](bootstrap-cos-sim-science)
+![](bootstrap-cos-sim-lettres.png) | ![](bootstrap-cos-sim-science.png)
 | **Social studies** | |
-|![](bootstrap-cos-sim-socpoli)|
+|![](bootstrap-cos-sim-socpoli.png)|
 
 ### Favorite genres
 
