@@ -123,12 +123,12 @@ A deeper analysis of the results will now be presented.
 
 As a first deeper analysis, it was interesting to compare the result of people from EPFL to people from UNIL. The first very vague idea is to compute the mean of preferences of each group. Here are the values:
 
-```
+
 | University | Classical | Rock | Pop  | R&B/Soul | Electronic | Folk | Jazz | Blues | Hiphop |
 |------------|-----------|------|------|----------|------------|------|------|-------|--------|
 | EPFL       | 4.06      | 3.32 | 4.77 | 3.19     | 3.22       | 2.12 | 3.22 | 2.70  | 3.45   |
 | UNIL       | 3.62      | 3.68 | 5.89 | 4.44     | 4.48       | 1.34 | 1.82 | 1.68  | 5.10   |
-```
+
 
 The need of comparing those two vectors is what motivates the next part. We can draw naive conclusion from this data, namely, we see that people from UNIL tend to listen to more Hip-hop than people from EPFL. This result cannot be classified as more than an interpretation, and it would desirable to have a value that states how close or far the values are. We could compute a simple correlation term or a cosine similarity in order to have a metric regarding how alike the preferences are. This is better than before but still, having only one value does not allow us to conclude anything.
 
@@ -161,7 +161,8 @@ To find a relationship between genres, correlation between them was computed. Fr
 
 We also noticed that the correlations between folk music and hip-hop, as well as folk music and electronic, are lower than average. Hence, these two genres can be interpreted as contrasting. The preference for folk is independent of hip-hop and Electronic music.
 
-![](correlation_btw_genres.png) ![](correlation_mean.png)
+:------------------------------:|:--------------------------:
+![](correlation_btw_genres.png) |  ![](correlation_mean.png)
 
 Computing the means of correlations with other genres for each separate genre, demonstrates that in general, people's preference for folk music in general has little to do with their preference for other genres.
 
@@ -171,7 +172,7 @@ Computing the means of correlations with other genres for each separate genre, d
 Next step is the examination of musical preferences depending on the kinds of studies. For this part, it appeared reasonable to group some closely related fields across UNIL and EPFL together to get a more statistically balanced representation, considering the fact that some sections had very few data points. Sections with a larger number of responses were kept separate. Additionally, these groups were combined into 2 macrogroups - STEM and Business&Humanities, similarly to what has been done in one comparative study on musical tastes of Chinese and American students [2].
 College of Digital Humanities (CHD), being on the edge between the two, could stand separately as it is difficult to classify as belonging to one group or another. However, due to the low number of responses and considering that students mostly come from computer science and engineering background, it was grouped together with the IC department (School of Computer and Communication Sciences). The grouping is as follows:
 
-```
+
 |        Macrogroup       |         Group         |        Section      |  Number of students |
 |:-----------------------:|:----------------------|:--------------------|--------------------:|
 |       **STEM**          |        Sciences       | SB (EPFL)           | 10                  |
@@ -186,7 +187,7 @@ College of Digital Humanities (CHD), being on the edge between the two, could st
 |                         |       Economics       | CDM (EPFL)          | 8                   |
 |                         |                       | HEC (Unil)          |                     |
 |                         |       Arts (Unil)     | Faculté des lettres | 6                   |
-```
+
 
 We compare the prefernces between the macrogroups by applying the same cosine difference and validating through the bootstraping method as we did before to compare between the universities.
 
@@ -194,4 +195,5 @@ We compare the prefernces between the macrogroups by applying the same cosine di
 # References
 
 [1] _Two-sample bootstrap tests: When to mix?_ Subhash Lele, Ed Carlstein
+
 [2] _Globalization of Millennials’ Music Consumption: A cross-national music taste study of undergraduate students in China and the U.S._ Yifan Xu
