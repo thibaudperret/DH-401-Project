@@ -200,7 +200,7 @@ As we can see, the difference between the two major macrogroups is by far not as
 
 ### Differences
 
-| **STI** | **EPFL** |
+| **STI** | **Economics** |
 |:--------:|:--------:|
 | ![](bootstrap-cos-sim-sti.png) | ![](bootstrap-cos-sim-econ.png)
 
