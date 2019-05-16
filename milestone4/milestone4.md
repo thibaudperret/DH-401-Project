@@ -171,26 +171,63 @@ Computing the means of correlations with other genres for each separate genre, d
 ## Differences depending the field of study
 
 Next step is the examination of musical preferences depending on the kinds of studies. For this part, it appeared reasonable to group some closely related fields across UNIL and EPFL together to get a more statistically balanced representation, considering the fact that some sections had very few data points. Sections with a larger number of responses were kept separate. Additionally, these groups were combined into 2 macrogroups - STEM and Business&Humanities, similarly to what has been done in one comparative study on musical tastes of Chinese and American students [2].
+
 College of Digital Humanities (CHD), being on the edge between the two, could stand separately as it is difficult to classify as belonging to one group or another. However, due to the low number of responses and considering that students mostly come from computer science and engineering background, it was grouped together with the IC department (School of Computer and Communication Sciences). The grouping is as follows:
 
 
 |        Macrogroup       |         Group         |        Section      |  Number of students |
-|:-----------------------:|:----------------------|:--------------------|--------------------:|
-|       **STEM**          |        Sciences       | SB (EPFL)           | 10                  |
-|                         |                       | SB (EPFL)           |                     |
-|                         |   Informatics (EPFL)  | IC                  | 8                   |
-|                         |                       | CDH                 |                     |
-|                         |      ENAC (EPFL)      |                     | 8                   |
-|                         |       STI (EPFL)      |                     | 9                   |
-| **Business&Humanities** | Social Studies (Unil) | SSP                 | 11                  |
-|                         |                       | FDCA                |                     |
-|                         |                       | GSE                 |                     |
-|                         |       Economics       | CDM (EPFL)          | 8                   |
-|                         |                       | HEC (Unil)          |                     |
+|:-----------------------:|:----------------------|--------------------:|--------------------:|
+|       **STEM**          |        Sciences       | SB\* (EPFL)         | 10                  |
+|                         |                       | FBM\* (Unil)        |                     |
+|                         |   Informatics (EPFL)  | IC\*                | 8                   |
+|                         |                       | CDH\*               |                     |
+|                         |      ENAC\* (EPFL)    |                     | 8                   |
+|                         |       STI\* (EPFL)    |                     | 9                   |
+| **Business&Humanities** | Social Studies (Unil) | SSP\*               | 11                  |
+|                         |                       | FDCA\*              |                     |
+|                         |                       | GSE\*               |                     |
+|                         |       Economics       | CDM\* (EPFL)        | 8                   |
+|                         |                       | HEC\* (Unil)        |                     |
 |                         |       Arts (Unil)     | Faculté des lettres | 6                   |
 
 
-We compare the prefernces between the macrogroups by applying the same cosine difference and validating through the bootstraping method as we did before to compare between the universities.
+
+We compare the preferences between the macrogroups by applying the same cosine difference and validating through the bootstraping method as we did before to compare between the universities.
+
+![](stem.png)
+
+As we can see, the difference between the two major macrogroups is by far not as significant the difference between the two universities, meaning that the campus environment could be more decisive for the tastes. However, there are still notable differences if we look into finer distinction between the study groups.
+
+### Homogeneity
+
+We define *homogeneity* as the average of pairwise cosine similarities within a set ***d*** of preference vectors that correspond to a certain section:
+![](homogeneity_01.png)
+![](homogeneity_02.png)
+With this measure we can see in which fields of study the tastes are the most aligned.
+
+Interestingly, the section that is the most dissimilar to the others, which is School of Engineering (STI), turned out to also be the most heterogeneous. This is also visible in how none of the genres has a huge advantage over the others for this section with maximum "popularity" (mean) at just 3.67 for classical music. In contrast, the most uniform in its tastes compared to the rest, is Faculty of Arts ("lettres") with homogeneity coefficient of 0.81, followed by School of Architecture, Civil and Environmental Engineering (ENAC).
+
+|#|Section|Homogeneity
+|:----:|:----:|:----:|
+|1|	Arts |0.813209
+|2|	ENAC	|0.712033
+|3|	Social studies	|0.709120
+|4|	Economics	|0.655249
+|5|	Informatics	|0.633463
+|6|	Sciences	|0.625581
+|7|	Engineering (STI)	|0.554028
+
+Comparing globally, UNIL is just insignificantly more homogeneous compared  to EPFL.
+
+| **Unil** | **EPFL** |
+|:--------:|:--------:|
+| 0.693556 | 0.632053 |
+
+More noticeably, business and humanities students have relatively more homogeneous tastes compared to STEM students.
+
+|**Business&Humanities**|**STEM**|
+|:---------------------:|:------:|
+|        0.710582       |0.632053|
 
 
 # References
